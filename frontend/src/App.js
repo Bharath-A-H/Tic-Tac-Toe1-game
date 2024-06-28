@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Board from './Board';
 import './App.css';
@@ -45,6 +44,9 @@ const App = () => {
         if (data.success) {
           setSquares(data.gameState);
           setXIsNext(!xIsNext);
+          if (data.winner) {
+            setWinner(data.winner);
+          }
         }
       });
   };
@@ -84,7 +86,6 @@ const App = () => {
   return (
     <div className="game">
       <div className="game-board">
-
         <div id='head'>Tic-Tac-Toe</div>
         <Board squares={squares} onClick={handleClick} winningSquares={winningSquares} />
       </div>

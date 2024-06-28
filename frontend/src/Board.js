@@ -1,30 +1,36 @@
-
 import React from 'react';
+import Square from './Square';
 
-const Square = ({ value, onClick, isWinningSquare }) => (
-  <button className={`square ${isWinningSquare ? 'winning-square' : ''} ${value === 'X' ? 'x-square' : value === 'O' ? 'o-square' : ''}`} onClick={onClick}>
-    {value}
-  </button>
-);
+const Board = ({ squares, onClick, winningSquares }) => {
+  const renderSquare = (i) => {
+    const isWinningSquare = winningSquares.includes(i);
+    return (
+      <Square
+        key={i}
+        value={squares[i]}
+        onClick={() => onClick(i)}
+        isWinningSquare={isWinningSquare}
+      />
+    );
+  };
 
-const Board = ({ squares, onClick, winningSquares }) => (
-  <div>
-    <div className="board-row">
-      {squares.slice(0, 3).map((value, index) => (
-        <Square key={index} value={value} onClick={() => onClick(index)} isWinningSquare={winningSquares.includes(index)} />
-      ))}
-    </div>
-    <div className="board-row">
-      {squares.slice(3, 6).map((value, index) => (
-        <Square key={index + 3} value={value} onClick={() => onClick(index + 3)} isWinningSquare={winningSquares.includes(index)} />
-      ))}
-    </div>
-    <div className="board-row">
-      {squares.slice(6, 9).map((value, index) => (
-        <Square key={index + 6} value={value} onClick={() => onClick(index + 6)} isWinningSquare={winningSquares.includes(index)} />
-      ))}
-    </div>
-  </div>
-);
+  const renderBoard = () => {
+    let board = [];
+    for (let row = 0; row < 3; row++) {
+      let rowSquares = [];
+      for (let col = 0; col < 3; col++) {
+        rowSquares.push(renderSquare(row * 3 + col));
+      }
+      board.push(
+        <div key={row} className="board-row">
+          {rowSquares}
+        </div>
+      );
+    }
+    return board;
+  };
+
+  return <div>{renderBoard()}</div>;
+};
 
 export default Board;
