@@ -1,4 +1,3 @@
-
 body {
   font-family: 'Arial', sans-serif;
   background-color: #eedfdf;
@@ -31,7 +30,6 @@ button:hover {
   background-color: #ddd;
 }
 
-/* Game styling */
 .game {
   display: flex;
   flex-direction: column;
@@ -42,8 +40,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
- margin-bottom: 20px;
-  
+  margin-bottom: 20px;
 }
 
 .winner {
@@ -51,7 +48,6 @@ button:hover {
   color: green;
 }
 
-/* Board and square styling */
 .board-row {
   display: flex;
 }
@@ -85,7 +81,6 @@ button:hover {
   background-color: yellow;
 }
 
-/* Game info styling */
 .game-info {
   margin-left: 20px;
 }
