@@ -3,7 +3,7 @@ import Square from './Square';
 
 const Board = ({ squares, onClick, winningSquares }) => {
   const renderSquare = (i) => {
-    const isWinningSquare = winningSquares.includes(i);
+    const isWinningSquare = winningSquares.includes(i); 
     return (
       <Square
         key={i}
@@ -16,10 +16,12 @@ const Board = ({ squares, onClick, winningSquares }) => {
 
   const renderBoard = () => {
     let board = [];
+  
     for (let row = 0; row < 3; row++) {
       let rowSquares = [];
+    
       for (let col = 0; col < 3; col++) {
-        rowSquares.push(renderSquare(row * 3 + col));
+        rowSquares.push(renderSquare(row * 3 + col)); 
       }
       board.push(
         <div key={row} className="board-row">
@@ -27,7 +29,7 @@ const Board = ({ squares, onClick, winningSquares }) => {
         </div>
       );
     }
-    return board;
+    return board; 
   };
 
   return <div>{renderBoard()}</div>;
