@@ -84,3 +84,17 @@ button:hover {
 .game-info {
   margin-left: 20px;
 }
+
+.player-setup {
+  text-align: center;
+}
+
+.player-setup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-setup div {
+  margin: 20px 0;
+}
