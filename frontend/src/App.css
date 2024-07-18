@@ -1,6 +1,9 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #eedfdf;
+  background-image: url("C:\Users\Bharath\Downloads\tttt.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +37,10 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #f9d8ed; 
+  padding: 40px 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .game-board {
@@ -41,6 +48,18 @@ button:hover {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.players {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.players div {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .winner {
@@ -70,19 +89,24 @@ button:hover {
 }
 
 .square.X {
-  color: red;
+  color: rgb(238, 114, 114);
+  font-size: 40px;
+  align-items: center;
 }
 
 .square.O {
-  color: blue;
+  color: rgb(12, 89, 183);
+  font-size: 40px;
+  align-items: center;
+
 }
 
 .winning-square {
-  background-color: yellow;
+  background-color: rgb(38, 255, 0);
 }
 
 .game-info {
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 .player-setup {
@@ -97,4 +121,15 @@ button:hover {
 
 .player-setup div {
   margin: 20px 0;
+}
+
+.player-setup input[type="text"] {
+  width: 200px; /* Increase width of input fields */
+  height: 30px;
+  font-size: 18px; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+}
+.player-setup label{
+  font-size: 25px;
+  color:black;
 }
